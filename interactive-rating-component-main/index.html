@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+      :root {
+        --Orange: hsl(25, 97%, 53%);
+        --LightGrey: hsl(217, 12%, 63%);
+        --MediumGrey: hsl(216, 12%, 54%);
+        --DarkBlue: hsl(213, 19%, 18%);
+        --VeryDarkBlue: hsl(216, 12%, 8%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Overpass", sans-serif;
+      }
+
+      html {
+        font-size: 15px;
+      }
+
+      body {
+        background-color: var(--VeryDarkBlue);
+        display: grid;
+        height: 100vh;
+      }
+
+      #rating,
+      #thankYou {
+        background-color: hsl(216, 12%, 15%);
+        width: 300px;
+        padding: 20px;
+        border-radius: 20px;
+        place-self: end center;
+        margin: 20px 0;
+      }
+
+      #star-icon {
+        border-radius: 50%;
+        background-color: hsl(213, 19%, 20%);
+        padding: 13px;
+        margin-bottom: 10px;
+      }
+
+      h2,
+      h3 {
+        color: white;
+        margin: 10px 0;
+      }
+
+      #rating-desc {
+        color: var(--MediumGrey);
+        text-align: justify;
+      }
+
+      ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+
+      .ratings {
+        display: grid;
+        text-decoration: none;
+        color: var(--LightGrey);
+        border-radius: 50%;
+        background-color: hsl(213, 19%, 20%);
+        place-items: center;
+        padding-top: 4px;
+        width: 40px;
+        height: 41px;
+      }
+
+      .ratings:hover,
+      .ratings:active {
+        color: white;
+        background-color: var(--Orange);
+      }
+
+      .active {
+        color: white;
+        background-color: var(--LightGrey);
+      }
+
+      #submit {
+        display: block;
+        color: white;
+        background-color: var(--Orange);
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      #submit:hover,
+      #submit:active {
+        color: var(--Orange);
+        background-color: white;
+      }
+
+      #thankYou {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h5 {
+        color: var(--Orange);
+        background-color: hsl(213, 19%, 20%);
+        border-radius: 20px;
+        padding: 5px 10px;
+        margin: 20px 0 10px 0;
+      }
+
+      #thankYou-desc {
+        color: var(--MediumGrey);
+        text-align: center;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: var(--MediumGrey);
+      }
+      .attribution a {
+        color: var(--Orange);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="rating">
+      <img id="star-icon" src="./images/icon-star.svg" alt="star icon" />
+      <h3>How did we do?</h3>
+      <p id="rating-desc">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      <ul>
+        <li><a class="ratings" href="#" onclick="activeRating(this)">1</a></li>
+        <li><a class="ratings" href="#" onclick="activeRating(this)">2</a></li>
+        <li><a class="ratings" href="#" onclick="activeRating(this)">3</a></li>
+        <li><a class="ratings" href="#" onclick="activeRating(this)">4</a></li>
+        <li><a class="ratings" href="#" onclick="activeRating(this)">5</a></li>
+      </ul>
+      <a id="submit" href="#" onclick="submit()">Submit</a>
+    </main>
+    <main id="thankYou">
+      <img src="./images/illustration-thank-you.svg" alt="transaction icon" />
+      <h5>You selected <span id="selected-rating"></span> out of 5</h5>
+      <h2>Thank you!</h2>
+      <p id="thankYou-desc">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+    </main>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/jidanrestu">Jidan Restu Kurniawan</a>.
+    </div>
+    <script>
+      const activeElms = document.getElementsByClassName("active");
+      let rating = "";
+      document.getElementById("thankYou").style.display = "none";
+
+      function activeRating(elem) {
+        if (activeElms.length > 0 && activeElms[0] != elem) {
+          activeElms[0].classList.remove("active");
+        }
+        elem.classList.toggle("active");
+      }
+
+      function submit() {
+        if (activeElms.length === 0) {
+          alert("Please select the rate number!");
+          return;
+        }
+        rating = activeElms[0].innerText;
+        document.getElementById("thankYou").style.display = "flex";
+        document.getElementById("selected-rating").innerText = rating;
+        document.getElementById("rating").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
