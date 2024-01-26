@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="This is a solution to the Order summary card challenge on Frontend Mentor" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Frontend Mentor, Challenges" />
+    <meta name="author" content="Jidan Restu Kurniawan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Order summary card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+      :root {
+        --PaleBlue: hsl(225, 100%, 94%);
+        --BrightBlue: hsl(245, 75%, 52%);
+        --VeryPaleBlue: hsl(225, 100%, 98%);
+        --DesaturatedBlue: hsl(224, 23%, 55%);
+        --DarkBlue: hsl(223, 47%, 23%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: "Red Hat Display", sans-serif;
+        font-weight: 500;
+      }
+
+      body {
+        display: grid;
+        height: 100vh;
+        background: var(--PaleBlue) url(./images/pattern-background-desktop.svg) no-repeat;
+      }
+
+      main {
+        place-self: end center;
+        width: 375px;
+        background-color: white;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      main > img {
+        width: 100%;
+      }
+
+      main > section {
+        padding: 20px;
+      }
+
+      #header {
+        margin: 10px 0;
+        color: var(--DarkBlue);
+        font-weight: 900;
+        font-size: 1.3rem;
+      }
+
+      #detail {
+        margin: 20px 0;
+        color: var(--DesaturatedBlue);
+      }
+
+      #pricing {
+        display: flex;
+        align-items: center;
+        background-color: var(--VeryPaleBlue);
+        justify-content: space-between;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+      }
+
+      #pricing div {
+        display: inherit;
+        align-items: inherit;
+      }
+
+      #pricing p {
+        color: var(--DarkBlue);
+        font-weight: 700;
+        margin-left: 10px;
+      }
+
+      #price {
+        color: var(--DesaturatedBlue);
+      }
+
+      #change {
+        font-size: 0.9rem;
+        color: var(--BrightBlue);
+      }
+
+      #change:hover,
+      #change:active {
+        color: hsla(245, 75%, 52%, 0.75);
+        text-decoration: none;
+      }
+
+      #proceed {
+        background-color: var(--BrightBlue);
+        color: var(--VeryPaleBlue);
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      #proceed:hover,
+      #proceed:active {
+        background-color: hsla(245, 75%, 52%, 0.75);
+      }
+
+      #cancel {
+        color: var(--DesaturatedBlue);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      #cancel:hover,
+      #cancel:active {
+        color: var(--DarkBlue);
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: var(--DarkBlue);
+      }
+      .attribution a {
+        color: var(--BrightBlue);
+        text-decoration: none;
+      }
+
+      @media screen and (max-width: 375px) {
+        body {
+          background: var(--PaleBlue) url(./images/pattern-background-mobile.svg) no-repeat;
+        }
+      }
+      @media screen and (max-width: 413px) {
+        main {
+          width: 90vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="./images/illustration-hero.svg" alt="someone hearing music with his headphone" />
+      <section>
+        <p id="header">Order Summary</p>
+        <p id="detail">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+        <div id="pricing">
+          <div>
+            <img src="./images/icon-music.svg" alt="music icon" />
+            <p>Annual Plan <br /><span id="price">$59.99/year</span></p>
+          </div>
+          <a href="#" id="change">Change</a>
+        </div>
+        <a href="#" id="proceed">Proceed to Payment</a>
+        <a href="#" id="cancel">Cancel Order</a>
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="https://github.com/jidanrestu">Jidan Restu Kurniawan</a>.
+    </div>
+  </body>
+</html>

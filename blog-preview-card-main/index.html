@@ -1,124 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="This is a solution to the Blog preview card challenge on Frontend Mentor" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Frontend Mentor, Challenges" />
+    <meta name="author" content="Jidan Restu Kurniawan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
     <title>Frontend Mentor | Blog preview card</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&display=swap");
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            border-radius: 15px;
-            font-size: 1rem;
-            font-family: 'Figtree', sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border-radius: 15px;
+        font-size: 1rem;
+        font-family: "Figtree", sans-serif;
+      }
 
-        body {
-            background-color: hsl(47, 88%, 63%);
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
+      body {
+        background-color: hsl(47, 88%, 63%);
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      main {
+        background-color: hsl(0, 0%, 100%);
+        box-shadow: 7.5px 7.5px hsl(0, 0%, 7%);
+        width: 375px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      main > img {
+        width: 100%;
+      }
+
+      p {
+        width: fit-content;
+        margin: 16px 0;
+      }
+
+      main > p:nth-of-type(1) {
+        background-color: hsl(47, 88%, 63%);
+        border-radius: 3px;
+        font-weight: bold;
+        padding: 5px 10px;
+      }
+
+      main > p:nth-of-type(2) {
+        font-size: 0.9rem;
+      }
+
+      main > p:nth-of-type(3) {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      main > p:nth-of-type(4) {
+        color: hsl(0, 0%, 50%);
+      }
+      main > div:nth-of-type(1) {
+        display: flex;
+        align-items: center;
+      }
+      main > div > img {
+        width: 30px;
+      }
+      main > div > span {
+        margin-left: 10px;
+        font-weight: bold;
+      }
+
+      .attribution {
+        font-size: 0.6rem;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .attribution a {
+        font-size: 0.7rem;
+        color: hsl(228, 45%, 44%);
+      }
+
+      /* typical phone screen resolution */
+      @media only screen and (max-width: 450px) {
+        :root {
+          font-size: 11px;
         }
 
         main {
-            background-color: hsl(0, 0%, 100%);
-            box-shadow: 7.5px 7.5px hsl(0, 0%, 7%);
-            width: 375px;
-            margin: auto;
-            padding: 20px;
+          width: 75vw;
         }
-
-        main > img {
-            width: 100%;
-        }
-
-        p {
-            width: fit-content;
-            margin: 16px 0;
-        }
-
-        main > p:nth-of-type(1) {
-            background-color: hsl(47, 88%, 63%);
-            border-radius: 3px;
-            font-weight: bold;
-            padding: 5px 10px;
-        }
-
-        main > p:nth-of-type(2) {
-            font-size: 0.9rem;
-        }
-
-        main > p:nth-of-type(3) {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        main > p:nth-of-type(4) {
-            color: hsl(0, 0%, 50%);
-        }
-        main > div:nth-of-type(1) {
-            display: flex;
-            align-items: center;
-        }
-        main > div > img {
-            width: 30px;
-        }
-        main > div > span {
-            margin-left: 10px;
-            font-weight: bold;
-        }
-
-        .attribution {
-            font-size: 0.6rem;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-            .attribution a {
-                font-size: 0.7rem;
-                color: hsl(228, 45%, 44%);
-            }
-
-        /* typical phone screen resolution */
-        @media only screen and (max-width : 450px) {
-            :root {
-                font-size: 11px;
-            }
-
-            main {
-                width: 75vw;
-            }
-        }
-        /* landscape orientation */
-        @media only screen and (min-width : 375px) and (max-width : 667px) and (orientation : landscape) {
-        }
-        /* portrait orientation */
-        @media only screen and (min-width : 375px) and (max-width : 667px) and (orientation : portrait) {
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <img src="./assets/images/illustration-article.svg" alt="illustration article" />
-        <p>Learning</p>
-        <p>Published 21 Dec 2023</p>
-        <p>HTML & CSS foundations</p>
-        <p>These languages are the backbone of every website, defining structure, content, and presentation.</p>
-        <div>
-            <img src="./assets/images/image-avatar2.jpg" alt="image avatar" /><span>Greg Hooper</span>
-        </div>
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-            Coded by <a href="https://github.com/jidanrestu">Jidan Restu Kurniawan</a>.
-        </div>
+      <img src="./assets/images/illustration-article.svg" alt="illustration article" />
+      <p>Learning</p>
+      <p>Published 21 Dec 2023</p>
+      <p>HTML & CSS foundations</p>
+      <p>These languages are the backbone of every website, defining structure, content, and presentation.</p>
+      <div><img src="./assets/images/image-avatar2.jpg" alt="image avatar" /><span>Greg Hooper</span></div>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+        <a href="https://github.com/jidanrestu">Jidan Restu Kurniawan</a>.
+      </div>
     </main>
-</body>
+  </body>
 </html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="This is a solution to the NFT preview card component challenge on Frontend Mentor" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Frontend Mentor, Challenges" />
+    <meta name="author" content="Jidan Restu Kurniawan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+      :root {
+        --SoftBlue: hsl(215, 51%, 70%);
+        --Cyan: hsl(178, 100%, 50%);
+        --VeryDarkBlueMainBg: hsl(217, 54%, 11%);
+        --VeryDarkBlueCardBg: hsl(216, 50%, 16%);
+        --VeryDarkBlueLine: hsl(215, 32%, 27%);
+        --White: hsl(0, 0%, 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Outfit", sans-serif;
+      }
+
+      a {
+        color: var(--White);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:active {
+        color: var(--Cyan);
+      }
+
+      html {
+        font-size: 18px;
+      }
+
+      body {
+        background-color: var(--VeryDarkBlueMainBg);
+        display: grid;
+        height: 100vh;
+      }
+
+      main {
+        background-color: var(--VeryDarkBlueCardBg);
+        width: 300px;
+        padding: 20px;
+        border-radius: 20px;
+        place-self: end center;
+        margin: 20px 0;
+      }
+
+      #img-cont {
+        height: 260px;
+        overflow: hidden;
+        border-radius: 20px;
+        background: hsla(178, 100%, 50%, 0.7) url(./images/icon-view.svg) center no-repeat;
+      }
+
+      #nft-img {
+        width: 100%;
+      }
+
+      #nft-img:hover {
+        opacity: 0.3;
+        cursor: pointer;
+      }
+
+      #header {
+        display: block;
+        margin: 20px 0;
+        font-weight: 600;
+      }
+
+      #detail {
+        color: var(--SoftBlue);
+        font-size: 0.889rem;
+        font-weight: 300;
+      }
+
+      #price-time {
+        display: flex;
+        margin: 20px 0;
+        justify-content: space-between;
+        font-size: 0.778rem;
+      }
+
+      #price-time img {
+        margin-right: 5px;
+      }
+
+      #price,
+      #time,
+      #footer {
+        display: flex;
+        align-items: center;
+      }
+
+      #price {
+        color: var(--Cyan);
+      }
+
+      #time {
+        color: var(--SoftBlue);
+      }
+
+      hr {
+        color: var(--VeryDarkBlueLine);
+        background-color: var(--VeryDarkBlueLine);
+        border: none;
+        height: 1px;
+      }
+
+      #footer {
+        margin-top: 20px;
+        font-size: 0.722rem;
+        color: var(--SoftBlue);
+      }
+
+      #footer > img {
+        width: 1.333rem;
+        border: 1px solid var(--White);
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+
+      #author {
+        margin-left: 4px;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: var(--SoftBlue);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="img-cont">
+        <img id="nft-img" src="./images/image-equilibrium.jpg" alt="equilibrium" />
+      </div>
+      <a href="#" id="header">Equilibrium #3429</a>
+      <p id="detail">Our Equilibrium collection promotes balance and calm.</p>
+      <div id="price-time">
+        <div id="price"><img src="./images/icon-ethereum.svg" alt="ethereum icon" />0.041 ETH</div>
+        <div id="time"><img src="./images/icon-clock.svg" alt="clock icon" />3 days left</div>
+      </div>
+      <hr />
+      <div id="footer"><img src="./images/image-avatar.png" alt="avatar image" />Creation of <a href="#" id="author">Jules Wyvern</a></div>
+    </main>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="https://github.com/jidanrestu">Jidan Restu Kurniawan</a>.
+    </div>
+  </body>
+</html>
